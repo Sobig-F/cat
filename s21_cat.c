@@ -43,9 +43,10 @@ void NumberNonblank(FILE *file, int b, int e, int n, int s, int t, int v) {
         if (!b || (now[0] != '\n')) {
           printf("%6d\t", count);
           ++count;
-        } else if (e) {
-          printf("      \t");
         }
+        // } else if (e) {
+        // printf("      \t");
+        // }
       }
       if (e && (now[0] == '\n')) {
         printf("$");
@@ -125,7 +126,6 @@ FILE **find_files(int argc, char *argv[], int *file_index) {
   FILE **all_files = NULL;
   int count = 0;
   for (int i = 1; (i < argc); ++i) {
-    printf("%d\n", i);
     if ((argv[i] != NULL) && ((int)strlen(argv[i]) > 0)) {
       file = fopen(argv[i], "r");
     }
